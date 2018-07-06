@@ -1,0 +1,36 @@
+server { 
+  listen 80; 
+  server_name wordpress; 
+  root /var/www/html; 
+	 
+  access_log /var/www/logs/access.log; 
+  error_log /var/www/logs/error.log; 
+
+  location / { 
+    root /var/www/html; 
+    index index.php index.html index.htm; 
+
+    if (-f $request_filename) { 
+      expires 30d; 
+      break; 
+    } 
+
+    if (!-e $request_filename) { 
+      rewrite ^(.+)$ /index.php?q=$1 last; 
+    } 
+  } 
+  
+  location ~ .php$ { 
+    include /etc/nginx/fastcgi_params;
+    fastcgi_pass   127.0.0.1:9000;
+    fastcgi_index  index.php;
+    fastcgi_param SCRIPT_FILENAME $request_filename;
+    fastcgi_param PATH_INFO $fastcgi_script_name;
+  } 
+
+  location ~ ^/(status|ping)$ {
+    allow all;
+    include /etc/nginx/fastcgi_params;
+    fastcgi_pass localhost:9000;
+  }
+} 
