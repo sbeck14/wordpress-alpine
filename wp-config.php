@@ -86,6 +86,8 @@ define( 'UPLOADS', 'wp-content/uploads' );
 define( 'AS3CF_AWS_ACCESS_KEY_ID', getenv('S3_ACCESS_KEY'));
 define( 'AS3CF_AWS_SECRET_ACCESS_KEY', getenv('S3_SECRET_KEY'));
 
+define('FORCE_SSL_ADMIN', true);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
