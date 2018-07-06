@@ -1,6 +1,6 @@
 server { 
-  listen 80;
-  listen 443 ssl;
+  listen 8000
+  listen 8080 ssl;
   
   server_name wordpress; 
   root /var/www/html; 
