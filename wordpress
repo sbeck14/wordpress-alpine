@@ -1,5 +1,5 @@
 server { 
-  listen $PORT;
+  listen 8000;
   
   server_name *.octanner.io;
   root /var/www/html; 
