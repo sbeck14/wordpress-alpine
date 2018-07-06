@@ -1,6 +1,12 @@
+server {
+  listen 8000 default_server;
+	listen [::]:8000 default_server;
+	server_name _;
+	return 301 https://$host$request_uri;
+}
+
 server { 
   listen 8000;
-  listen 8080 ssl;
   
   server_name wordpress; 
   root /var/www/html; 
