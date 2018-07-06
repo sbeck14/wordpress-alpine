@@ -93,5 +93,8 @@ ADD amazon-s3-and-cloudfront /var/www/html/wp-content/plugins/amazon-s3-and-clou
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
+EXPOSE  80
+EXPOSE 443
+
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["php-fpm"]
