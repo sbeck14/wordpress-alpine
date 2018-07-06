@@ -1,13 +1,7 @@
-server {
-    listen 80;
-    server_name wordpress-alamo.maruapp.octanner.io www.wordpress-alamo.maruapp.octanner.io;
-    rewrite ^ https://$server_name$request_uri permanent;
-}
-
 server { 
-  listen 443;
+  listen 8000 ssl;
   
-  server_name wordpress-alamo.maruapp.octanner.io www.wordpress-alamo.maruapp.octanner.io; 
+  server_name wordpress-alamo.maruapp.octanner.io www.wordpress-alamo.maruapp.octanner.io;
   root /var/www/html; 
 	 
   access_log /var/www/logs/access.log; 
