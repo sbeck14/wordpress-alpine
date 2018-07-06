@@ -1,7 +1,7 @@
 server { 
   listen $PORT;
   
-  server_name wordpress-alamo.maruapp.octanner.io www.wordpress-alamo.maruapp.octanner.io;
+  server_name *.octanner.io;
   root /var/www/html; 
 	 
   access_log /var/www/logs/access.log; 
