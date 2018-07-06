@@ -1,5 +1,5 @@
 server { 
-  listen 8000 ssl;
+  listen $PORT;
   
   server_name wordpress-alamo.maruapp.octanner.io www.wordpress-alamo.maruapp.octanner.io;
   root /var/www/html; 
