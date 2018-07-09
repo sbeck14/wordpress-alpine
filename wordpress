@@ -1,7 +1,6 @@
 server { 
   listen 8000;
-  
-  server_name *.octanner.io;
+
   root /var/www/html; 
 	 
   access_log /var/www/logs/access.log; 
