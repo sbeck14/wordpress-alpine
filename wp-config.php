@@ -80,8 +80,6 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 
 define( 'WP_MEMORY_LIMIT', '256M' );
-	
-define( 'UPLOADS', 'wp-content/uploads' );
 
 define( 'AS3CF_AWS_ACCESS_KEY_ID', getenv('S3_ACCESS_KEY'));
 define( 'AS3CF_AWS_SECRET_ACCESS_KEY', getenv('S3_SECRET_KEY'));

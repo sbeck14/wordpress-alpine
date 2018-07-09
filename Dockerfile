@@ -92,8 +92,9 @@ COPY ./docker-entrypoint.sh /usr/local/bin/
 ADD amazon-s3-and-cloudfront /var/www/html/wp-content/plugins/amazon-s3-and-cloudfront/
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
-	mkdir /var/www/html/wp-content/uploads && \
-	chown -R nginx /var/www/html/wp-content/uploads
+	chown -R www-data:www-data /var/www/html/wp-content && \
+	touch /var/log/fpm-php.www.log && \
+	chmod 777 /var/log/fpm-php.www.log
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["php-fpm"]
