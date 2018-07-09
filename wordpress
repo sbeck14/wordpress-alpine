@@ -9,11 +9,6 @@ server {
   location / { 
     root /var/www/html; 
     index index.php index.html index.htm; 
-
-    if (-f $request_filename) { 
-      expires 30d; 
-      break; 
-    } 
     
     try_files $uri $uri/ /index.php;
   } 

@@ -105,5 +105,3 @@ if (!in_array($s3, $plugins)){
 	array_push($plugins, $s3);
 	update_option('active_plugins',$plugins);
 }
-
-remove_filter('template_redirect', 'redirect_canonical');
